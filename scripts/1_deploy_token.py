@@ -4,8 +4,17 @@ from web3 import Web3
 
 initial_supply = Web3.toWei(1000, "ether")
 
-
 def main():
     account = get_account()
     our_token = OurToken.deploy(initial_supply, {"from": account})
     print(our_token.name())
+
+
+'''
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.7.3
+compiler:
+  solc:
+    remappings:
+      - 'openzeppelin=OpenZeppelin/openzeppelin-contracts@4.7.3'
+'''
